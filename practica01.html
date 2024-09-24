@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF - Anidado</title>
+    <style>
+        table{
+            margin: auto; width: 30%;
+        }
+        input[type=text]{
+            padding: 10px;
+        }
+        input[type=button]{
+            background-color: black;
+            color: rgb(191, 238, 144);
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function calcular(){
+
+            //leer el valor del numeor
+            // parseint es una funcion que convierte a nuemero entero
+            let xn = parseInt(document.getElementById("txtNum").value);
+            if (xn == 0) {
+                document.getElementById("txtRes").value = "cero";
+            }else{
+                if (xn > 0){
+                    document.getElementById("txtRes").value = "positivo";
+                } else {
+                    document.getElementById("txtRes").value = "negativo";
+                }
+            }
+        }
+        function limpiar(){
+            document.getElementById("txtNum").value= "";      
+            document.getElementById("txtRes").value= "";
+            document.getElementById("txtNum").focus();
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Evaluar Numero</h1>
+    <hr>
+    <div style="text-align: center;">
+        <img src="img/caja.jpg" alt="">
+    </div>
+    <table>
+        <!-- Caption : Titulo de la tabla -->
+        <caption style="padding: 10px; background-color: rgb(145, 192, 74);">Evaluar Numero</caption>
+        <tr>
+            <td>Numero</td>
+            <td>
+                <input type="text" id="txtNum">
+            </td>
+        </tr>
+        <tr>
+            <td>Resultado</td>
+            <td>
+                <input type="text" id="txtRes" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input onclick="calcular();" type="button" value="Calcular">
+            </td>
+            <td>
+                <input onclick="limpiar();" type="button" value="Limpiar">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
